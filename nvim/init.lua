@@ -202,7 +202,7 @@ require("lazy").setup({
 			-- stylua: ignore start
 			local languages = {
 				"bash", "c", "lua", "go", "python", "c_sharp", "hcl",
-				"rust", "typescript", "javascript", "json", "yaml"
+				"just", "rust", "typescript", "javascript", "json", "yaml"
 			}
 			-- stylua: ignore end
 
@@ -504,11 +504,14 @@ require("lazy").setup({
 			-- formatter
 			formatters_by_ft = {
 				cs = { "csharpier" },
+				just = { "just" },
 				json = { "biome" },
 				javascript = { "biome" },
 				typescript = { "biome" },
 				go = { "gofmt" },
 				lua = { "stylua" },
+				terraform = { "terraform" },
+				tf = { "terraform_ft" },
 			},
 			-- set default options
 			default_format_opts = {
@@ -531,9 +534,14 @@ require("lazy").setup({
 			})
 		end,
 	},
+	-- terraform
 	{
 		"hashivim/vim-terraform",
 		ft = { "terraform" },
+	},
+	-- just
+	{
+		"terror/just-lsp",
 	},
 	-- file pickers
 	{
