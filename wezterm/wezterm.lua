@@ -6,7 +6,7 @@ local config = wezterm.config_builder()
 
 config.term = "xterm-256color"
 
-config.window_background_opacity = 0.9
+config.window_background_opacity = 0.7
 config.win32_system_backdrop = "Acrylic"
 config.macos_window_background_blur = 30
 
@@ -36,9 +36,6 @@ end
 
 config.font = wezterm.font('JetBrains Mono')
 config.font_size = 10
-
-config.window_decorations = "RESIZE"
-config.tab_bar_at_bottom = true
 
 config.window_frame = {
 	font_size = 13.0
@@ -126,9 +123,6 @@ config.keys = {
 	split_nav("k"),
 	split_nav("l"),
 }
-
--- setting pwsh as default shell
-config.default_prog = { 'pwsh.exe', '-NoLogo' }
 
 -- hot reload config
 config.automatically_reload_config = true
