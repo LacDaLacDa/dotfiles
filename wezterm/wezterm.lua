@@ -124,6 +124,11 @@ config.keys = {
 	split_nav("l"),
 }
 
+-- default shell
+if wezterm.target_triple:find("windows") then
+	config.default_prog = { "pwsh.exe", "-NoLogo" }
+end
+
 -- hot reload config
 config.automatically_reload_config = true
 
