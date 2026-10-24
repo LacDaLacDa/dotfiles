@@ -1,0 +1,5 @@
+functions/
+conf.d/
+completions/
+fish_history
+fish_variables

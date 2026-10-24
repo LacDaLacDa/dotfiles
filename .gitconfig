@@ -38,7 +38,10 @@
 
 [user]
   name = "Hieu Nguyen"
-  email = nguyenhieuaa75@gmail.com
+  email = "nguyenhieuaa75@gmail.com"
+  signingkey = "010027B4551F7552"
+[commit]
+  gpgsign = true
 [diff]
   tool = nvimdiff
 [difftool "nvimdiff"]
