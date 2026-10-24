@@ -377,9 +377,9 @@ require("lazy").setup({
 				vim.lsp.enable("lua_ls")
 			end
 
-			-- csharp
-			if vim.fn.executable("roslyn-language-server") == 1 then
-				vim.lsp.enable("roslyn_ls")
+			-- golang
+			if vim.fn.executable("gopls") == 1 then
+				vim.lsp.enable("gopls")
 			end
 
 			-- Global mappings.
