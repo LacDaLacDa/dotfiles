@@ -201,7 +201,8 @@ require("lazy").setup({
 		config = function()
 			-- stylua: ignore start
 			local languages = {
-				"bash", "c", "lua", "go", "python", "c_sharp", "hcl",
+				"bash", "c", "lua", "go", "gomod", "gosum", "gowork",
+				"python", "c_sharp", "hcl",
 				"just", "rust", "typescript", "javascript", "json", "yaml"
 			}
 			-- stylua: ignore end
@@ -403,13 +404,18 @@ require("lazy").setup({
 					end,
 				})
 				vim.lsp.config("gopls", {
+					filetypes = { "go", "gomod", "gowork", "gotmpl" },
+					root_markers = { "go.work", "go.mod", ".git" },
 					settings = {
 						gopls = {
 							analyses = {
 								unusedparams = true,
+								shadow = true,
 							},
 						},
 						staticcheck = true,
+						completeUnimported = true,
+						usePlaceholders = true,
 						gofumpt = true,
 					},
 				})
@@ -542,7 +548,7 @@ require("lazy").setup({
 				json = { "biome" },
 				javascript = { "biome" },
 				typescript = { "biome" },
-				go = { "gofmt" },
+				go = { "goimports", "gofumpt" },
 				lua = { "stylua" },
 				terraform = { "terraform" },
 				tf = { "terraform_ft" },
