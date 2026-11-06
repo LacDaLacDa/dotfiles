@@ -7,8 +7,14 @@ local config = wezterm.config_builder()
 config.term = "xterm-256color"
 config.front_end = "OpenGL"
 
-config.window_background_opacity = 0.95
+{{ if eq .chezmoi.os "darwin" }}
+config.window_background_opacity = 0.75
 config.macos_window_background_blur = 30
+config.font_size = 17
+{{ else if .chezmoi.os "windows" }}
+config.window_background_opacity = 0.95
+config.font_size = 10
+{{ end }}
 
 local direction_keys = {
 	h = "Left",
@@ -42,7 +48,6 @@ config.font = wezterm.font_with_fallback({
 	},
 	{ family = "JetBrainsMono Nerd Font", weight = "Bold" },
 })
-config.font_size = 10
 
 config.window_frame = {
 	font_size = 13.0,
