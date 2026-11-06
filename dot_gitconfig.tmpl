@@ -39,11 +39,11 @@
 [user]
   name = "Hieu Nguyen"
   email = {{ .email }}
-{{ if .is_sign_commit }}
+{{- if .is_sign_commit }}
   signingkey = "010027B4551F7552"
 [commit]
   gpgsign = true
-{{ end }}
+{{- end }}
 
 [diff]
   tool = nvimdiff

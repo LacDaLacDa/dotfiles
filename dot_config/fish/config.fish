@@ -48,4 +48,4 @@ end
 source "$HOME/.orbstack/shell/init2.fish" 2>/dev/null || :
 
 # cargo
-source "$HOME/.cargo/env.fish"
+source "$HOME/.cargo/env.fish" 2>/dev/null || :
