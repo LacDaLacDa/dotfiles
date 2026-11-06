@@ -38,7 +38,13 @@
 
 [user]
   name = "Hieu Nguyen"
-  email = "adm.hieunt@bigc-vietnam.com"
+  email = {{ .email }}
+{{ if .is_sign_commit }}
+  signingkey = "010027B4551F7552"
+[commit]
+  gpgsign = true
+{{ end }}
+
 [diff]
   tool = nvimdiff
 [difftool "nvimdiff"]
@@ -48,5 +54,3 @@
   cmd = nvim -d \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
   trustExitCode = true
 
-[credential "https://repository.centralretail.com.vn"]
-	provider = generic
