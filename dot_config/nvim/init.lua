@@ -602,6 +602,9 @@ require("lazy").setup({
 	-- help remeber the key
 	{
 		"folke/which-key.nvim",
+		dependencies = {
+			"echasnovski/mini.icons",
+		},
 		event = "VeryLazy",
 		opts = {
 			spec = {
