@@ -7,14 +7,14 @@ local config = wezterm.config_builder()
 config.term = "xterm-256color"
 config.front_end = "OpenGL"
 
-{{ if eq .chezmoi.os "darwin" }}
+{{- if eq .chezmoi.os "darwin" }}
 config.window_background_opacity = 0.75
 config.macos_window_background_blur = 30
 config.font_size = 16
-{{ else if .chezmoi.os "windows" }}
-config.window_background_opacity = 0.95
+{{- else if eq .chezmoi.os "windows" }}
+config.window_background_opacity = 0.85
 config.font_size = 10
-{{ end }}
+{{- end }}
 
 local direction_keys = {
 	h = "Left",
