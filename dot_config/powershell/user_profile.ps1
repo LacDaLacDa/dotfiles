@@ -32,3 +32,6 @@ function which($command) {
 
 # make neovim regconize .config
 $Env:XDG_CONFIG_HOME = "$env:USERPROFILE\.config"
+
+# mise
+(&mise activate pwsh) | Out-String | Invoke-Expression

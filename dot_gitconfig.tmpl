@@ -47,6 +47,10 @@
 [commit]
   gpgsign = true
 {{- end }}
+{{- if eq .chezmoi.os "windows" }}
+[gpg]
+  program = "C:/Program Files/GnuPG/bin/gpg.exe"
+{{- end }}
 
 [diff]
   tool = nvimdiff
