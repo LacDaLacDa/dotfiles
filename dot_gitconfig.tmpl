@@ -2,6 +2,9 @@
   excludesfile = ~/.gitignore
   editor = nvim
   ignorecase = false
+{{- if eq .chezmoi.os "windows" }}
+  sshCommand = C:/Windows/System32/OpenSSH/ssh.exe
+{{- end }}
 [push]
   default = simple
 [color]
